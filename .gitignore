@@ -4,8 +4,12 @@
 /Saved
 /DerivedDataCache
 /Content/Developers
+/Content/Collections
+
+# Asset packs you need to add to your repo clone
 /Content/StarterContent
 /Content/GTFreeMaterials
+
 *.sdf
 *.opensdf
 *.sln
