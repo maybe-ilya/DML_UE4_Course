@@ -1,0 +1,13 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{EFB77564-44A1-AAFB-3FA9-ACB066B21389}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "DML_UE4_Course",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

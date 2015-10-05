@@ -1,0 +1,17 @@
+/Binaries
+/Build
+/Intermediate
+/Saved
+/DerivedDataCache
+/Content/Developers
+/Content/StarterContent
+/Content/GTFreeMaterials
+*.sdf
+*.opensdf
+*.sln
+*.suo
+*.pdb
+*.exe
+*-DebugGame.dll
+*.log
+*.target.xml
