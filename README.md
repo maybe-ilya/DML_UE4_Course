@@ -11,24 +11,35 @@ In this lessons course we'll cover several UE4 development topics such as
 * and more, more, more...
 
 ## Used software
-* Unreal Engine 4 (current version: 4.9.2) [Official site](https://www.unrealengine.com)
-* Microsoft Visual Studio 2013 Community Edition [UE4 don't support 2015 version! Be careful!](https://www.visualstudio.com/en-us/news/vs2013-community-vs.aspx)
+* [Unreal Engine 4](https://www.unrealengine.com) Current version: 4.9.2
+* [GitHub](https://github.com/) for team project development and repo sharing
+* [Microsoft Visual Studio 2013 Community Edition](https://www.visualstudio.com/en-us/news/vs2013-community-vs.aspx) UE4 don't support 2015 version! Be careful!
  * Also you may need [Productivity Power Tools](https://visualstudiogallery.msdn.microsoft.com/dbcb8670-889e-4a54-a226-a48a15e4cace) to improve your C++ coding
-* Sublime Text 3 [It may be useful for little changes and fixes...](http://www.sublimetext.com/3)
-* Gimp [Also sometimes may be useful](http://www.gimp.org/downloads/)
-* VLC [for more handy youtube and twitch watching](http://www.videolan.org/vlc/)
- * Livestreamer [Command line utility helping to watch Twitch streams in VLC](http://docs.livestreamer.io/)
+* [Sublime Text 3](http://www.sublimetext.com/3) It may be useful for little changes and fixes...
+* [Gimp](http://www.gimp.org/downloads/) Also sometimes may be useful
+* [VLC](http://www.videolan.org/vlc/) for more handy youtube and twitch watching
+ * [Livestreamer](http://docs.livestreamer.io/) Command line utility helping to watch Twitch streams in VLC
 
 ## Useful links for rookies
-* [Unreal docs and manuals. Never ignore it! It'll save your time!](https://docs.unrealengine.com/latest/INT/)
-* [Unreal Engine Youtube channel contains useful video tuts and records from Twitch channel](https://www.youtube.com/user/UnrealDevelopmentKit)
-* [UE Twitch channel for live training streams](http://www.twitch.tv/unrealengine)
+* [Unreal docs and manuals](https://docs.unrealengine.com/latest/INT/) Never ignore it! It'll save your time!
+* [Unreal Engine Youtube channel](https://www.youtube.com/user/UnrealDevelopmentKit) contains useful video tuts and records from Twitch channel
+* [Unreal Engine Twitch channel](http://www.twitch.tv/unrealengine)  for live training streams
 * [Marketplace](https://www.unrealengine.com/marketplace) Asset store were you can pick some awesome assets for money or get free brilliant asset packs from Epic Games
 
 ## Before you start
-Please download and add to cloned repo next assets packs:
+If you're [Digital Media Lab](http://vk.com/digitalmedialab) 1st or 2nd year student, please fill [this Google Form](https://docs.google.com/forms/d/1XyXXx6TnQwx4hvaZwIibKRRNjvgDFWmQpLz8nSEIwdA/viewform) to control student attendance on lessons.
+
+But if you're 3rd year student or you just want to learn UE4 basics I'm going to stream lessons to [My Twitch channel](http://www.twitch.tv/napolinkinpark3r). Everybody is welcome. Records will be stored in the same Twitch channel.
+
+If you have questions about UE4 or this lessons course, please text down your question to my email
+> **napolinkinpark3r@gmail.com** 
+
+with **[DML][UE4]** letter theme
+
+Also when you've cloned repo, please download and add to that next assets packs:
 * Starter Content
 * [GameTextures Material Pack](https://www.unrealengine.com/marketplace/gametextures-material-pack)
+
 
 ## About repo structure
 Content and Source folder of repo is divided into separate folder: Ready, Lesson, Student
