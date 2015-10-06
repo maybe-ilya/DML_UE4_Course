@@ -27,9 +27,9 @@ In this lessons course we'll cover several UE4 development topics such as
 * [Marketplace](https://www.unrealengine.com/marketplace) Asset store were you can pick some awesome assets for money or get free brilliant asset packs from Epic Games
 
 ## Before you start
-If you're [Digital Media Lab](http://vk.com/digitalmedialab) 1st or 2nd year student, please fill [this Google Form](https://docs.google.com/forms/d/1XyXXx6TnQwx4hvaZwIibKRRNjvgDFWmQpLz8nSEIwdA/viewform) to control student attendance on lessons.
+If you're [Digital Media Lab](http://vk.com/digitalmedialab) 2nd year student, please fill [this Google Form](https://docs.google.com/forms/d/1XyXXx6TnQwx4hvaZwIibKRRNjvgDFWmQpLz8nSEIwdA/viewform) to control student attendance on lessons.
 
-But if you're 3rd year student or you just want to learn UE4 basics I'm going to stream lessons to [My Twitch channel](http://www.twitch.tv/napolinkinpark3r). Everybody is welcome. Records will be stored in the same Twitch channel.
+But if you're 1st or 3rd year student or you just want to learn UE4 basics I'm going to stream lessons to [My Twitch channel](http://www.twitch.tv/napolinkinpark3r). Everybody is welcome. Records will be stored in the same Twitch channel.
 
 If you have questions about UE4 or this lessons course, please text down your question to my email
 > **napolinkinpark3r@gmail.com** 
