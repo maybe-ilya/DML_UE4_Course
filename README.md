@@ -42,7 +42,7 @@ Also when you've cloned repo, please download and add to that next assets packs:
 
 
 ## About repo structure
-Content and Source folder of repo is divided into separate folder: Ready, Lesson, Student
+Content and Source folders of repo is divided into separate folder: Ready, Lesson, Student
 * Ready folder contains assets and files that i'll prepare for lessons
 * Lesson folder contains assets and files that i'll make on lessons with students explaining lesson topic
-* Student folder is sandbox folder where students exhibit their talent, fantasy and imagination. Please, work only in this folder and don't modify files in other folders. Ready and Lesson folder are just referential.
+* Student folder is sandbox folder where students exhibit their talent, fantasy and imagination. Please, work only in this folder and don't modify files in other folders. Ready and Lesson folders are just referential.
