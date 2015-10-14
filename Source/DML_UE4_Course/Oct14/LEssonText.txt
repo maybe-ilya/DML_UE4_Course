@@ -1,0 +1,76 @@
+.Cpp - SOurce Сорцом
+.H - Header Заголовок
+
+A - ваш класс наследуется от AActor
+E - перечисление (enums)
+U - наследуется от UObject
+I - интерфейсы
+F - структы (некоторые) FOnlineSession
+T - структуры: массив, список, map, hashmap
+G - Global
+
+b - bool (bIsMoving) isMoving()
+
+
+1 DoSomething()
+	2 DoSomething() override
+		3 - конструктор
+
+bool
+float 
+double
+## Java style
+byte
+short 
+int
+long
+
+## UE4 C++ style
+int8
+int16
+int32
+int64
+uint8
+uint16
+uint32
+uint64 u - unsigned
+
+TCHAR
+FString
+FName
+FText (для локализации)
+
+public static void main(char[] args)
+
+public - доступен всем
+protected - для наследников
+private - для самого 
+
+protected:
+	bIsMoving
+
+	child will not see this
+
+Паспорт:
+	Адрес
+
+Указатель - это та область памяти, в которой объект
+
+int a = 15;
+int* b;
+
+void Awake()
+{
+	b = &a;
+}
+
+void Update(float DeltaSeconds)
+{
+	b = *a;
+	int*c;
+
+	delete c;
+}
+
+MyClass.DoThing()
+YourClass->DoThing()
