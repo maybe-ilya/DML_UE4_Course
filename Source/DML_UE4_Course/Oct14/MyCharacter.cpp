@@ -10,6 +10,15 @@ AMyCharacter::AMyCharacter(const FObjectInitializer& ObjectInitializer) : Super(
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	GetCapsuleComponent()->InitCapsuleSize(28.f, 92.f);
+
+	bUseControllerRotationYaw = false;
+
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+
+	GetMesh()->AddRelativeLocation(FVector(0, 0, -92.f));
+	GetMesh()->AddRelativeRotation(FRotator(0, -90.f, 0));
+
 	DefaultHealth = 100;
 	Health = DefaultHealth;
 

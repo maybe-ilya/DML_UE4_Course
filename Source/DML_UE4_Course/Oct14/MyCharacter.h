@@ -5,7 +5,7 @@
 #include "GameFramework/Character.h"
 #include "MyCharacter.generated.h"
 
-UCLASS()
+UCLASS(abstract)
 class DML_UE4_COURSE_API AMyCharacter : public ACharacter
 {
 	GENERATED_BODY()

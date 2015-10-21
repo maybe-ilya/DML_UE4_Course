@@ -21,4 +21,16 @@ public:
 	void MoveForward(float Step);
 
 	void LookUp(float Step);
+
+	void MoveRight(float Step);
+
+	void Turn(float Step);
+
+	void DoCharacterJump();
+
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Playable Character Camera")
+		USpringArmComponent* CameraBoom;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Playable Character Camera")
+		UCameraComponent* FollowCamera;
 };

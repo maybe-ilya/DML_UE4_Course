@@ -1,3 +1,4 @@
 
 .uasset filter=lfs diff=lfs merge=lfs -text
 .uproject filter=lfs diff=lfs merge=lfs -text
+Content/ filter=lfs diff=lfs merge=lfs -text
