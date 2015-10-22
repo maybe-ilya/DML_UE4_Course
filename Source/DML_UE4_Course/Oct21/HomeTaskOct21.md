@@ -19,7 +19,7 @@
 * В методе Tick(float DeltaSeconds) необходимо увеличивать соответствующий состоянию компонент структуры.
 	* С перечислениями можно работать при помощи switch
 	``` c++
-	> Switch(Test)
+	switch(Test)
 	{
 		case ETestEnum::Idle :
 		...
