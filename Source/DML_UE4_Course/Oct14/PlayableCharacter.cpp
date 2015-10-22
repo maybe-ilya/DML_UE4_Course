@@ -7,15 +7,15 @@ APlayableCharacter::APlayableCharacter(const FObjectInitializer& ObjectInitializ
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	CameraBoom = ObjectInitializer.CreateDefaultSubobject<USpringArmComponent>(this, "Camera Boom");
-	CameraBoom->AttachTo(RootComponent);
-	CameraBoom->bUsePawnControlRotation = true;
-	CameraBoom->bInheritPitch = false;
-	CameraBoom->bInheritYaw = true;
-	CameraBoom->bInheritRoll = false;
+	CameraBoom = ObjectInitializer.CreateDefaultSubobject<USpringArmComponent>(this, "Camera Boom");	// Создание компонента Spring Arm, на который повесим камеру
+	CameraBoom->AttachTo(RootComponent);	// Добавляем Стойку к Корневому компоненту Персонажа
+	CameraBoom->bUsePawnControlRotation = true;	// Для стойки включаем копирование Ротатора Контроллера нашего Персонажа
+	CameraBoom->bInheritPitch = false;	// Но не используем Наклон
+	CameraBoom->bInheritRoll = false;	// И не используем Вращение
+	CameraBoom->bInheritYaw = true;		// А копируем только Поворот
 
-	FollowCamera = ObjectInitializer.CreateDefaultSubobject<UCameraComponent>(this, "Follow Camera");
-	FollowCamera->AttachTo(CameraBoom);
+	FollowCamera = ObjectInitializer.CreateDefaultSubobject<UCameraComponent>(this, "Follow Camera");	// Создаем компонент камеры
+	FollowCamera->AttachTo(CameraBoom);	// Добавляем к Стойке, для обзора вокруг персонажа
 }
 
 
@@ -28,16 +28,17 @@ void APlayableCharacter::SetupPlayerInputComponent(class UInputComponent* InputC
 	InputComponent->BindAxis("Turn", this, &APlayableCharacter::Turn);
 
 	InputComponent->BindAction("Jump", IE_Pressed, this, &APlayableCharacter::DoCharacterJump);
-	//InputComponent->BindAction("Jump", IE_Released, this, &APlayableCharacter::StopCharacterJump);
+	//InputComponent->BindAction("Jump", IE_Released, this, &APlayableCharacter::StopCharacterJump);	// На случай, если вам нужно выполнять действия на отжатие клавиш
 }
 
 void APlayableCharacter::MoveForward(float Step)
 {
 	/*
-	const FRotator rot = GetControlRotation();
-	const newRot = FRotator(0, rot.Yaw, 0);
-	const FVector dir = FRotationMatrix(newRot)::GetUnitAxis(EAxis::X);
-	AddMovementInput(dir, Step);*/
+	const FRotator rot = GetControlRotation();	// Получаем Rotator контроллера
+	const newRot = FRotator(0, rot.Yaw, 0);		// Но нам не нужен весь Ротатор, а только поворот(Yaw)
+	const FVector dir = FRotationMatrix(newRot)::GetUnitAxis(EAxis::X);	// Выделяем из нового Ротатора вектор вперед Персонажа
+	AddMovementInput(dir, Step);	// и добавляем движение на этот вектор
+	 */
 
 	const FVector direction = FRotationMatrix(FRotator(0, GetControlRotation().Yaw, 0)).GetUnitAxis(EAxis::X);
 	AddMovementInput(direction, Step);
@@ -48,12 +49,18 @@ void APlayableCharacter::LookUp(float Step)
 	AddControllerPitchInput(Step);
 }
 
+/*	Метод из домашнего задания
+ *	Здесь мы делаем ровным счетом то же самое, что и в методе MoveForward, 
+ *	с разницей в том, что получаем вектор вправо Персонажа (вправо в Unreal'e - ось Y)
+ */
 void APlayableCharacter::MoveRight(float Step)
 {
 	const FVector direction = FRotationMatrix(FRotator(0, GetControlRotation().Yaw, 0)).GetUnitAxis(EAxis::Y);
 	AddMovementInput(direction, Step);
 }
-
+/*	Метод из домашнего задания
+	Мы просто добавляем шаг поворота(Yaw) контроллеру, а не наклона(Pitch) как в прошлом методе
+ */
 void APlayableCharacter::Turn(float Step)
 {
 	AddControllerYawInput(Step);

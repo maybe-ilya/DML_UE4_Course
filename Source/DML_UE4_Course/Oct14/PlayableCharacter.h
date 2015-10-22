@@ -3,6 +3,10 @@
 #pragma once
 
 #include "Oct14/MyCharacter.h"
+
+#include "Oct21/LessonOct21Enum.h"
+#include "Oct21/LessonOct21Struct.h"
+
 #include "PlayableCharacter.generated.h"
 
 /**
@@ -30,7 +34,13 @@ public:
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Playable Character Camera")
-		USpringArmComponent* CameraBoom;
+		USpringArmComponent* CameraBoom;	// Компонент стойки, на которую в дальнейшем повесим камеру
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Playable Character Camera")
-		UCameraComponent* FollowCamera;
+		UCameraComponent* FollowCamera;		// Компонент камеры
+
+	// Переменные типов данных, написанных на занятии
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "October 21 Lesson")
+		ELessonOct21Enum LessonState;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "October 21 Lesson")
+		FLessonOct21Struct LessonVector;
 };

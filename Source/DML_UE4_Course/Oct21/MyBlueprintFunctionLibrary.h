@@ -3,20 +3,19 @@
 #pragma once
 
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "LessonOct21Struct.h"
+#include "Oct21/LessonOct21Struct.h"
 #include "MyBlueprintFunctionLibrary.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class DML_UE4_COURSE_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
-	
-	public:
-		UMyBlueprintFunctionLibrary(const FObjectInitializer& ObjectInitializer);
 
-	UFUNCTION(BlueprintCallable, BlueprintPure ,Category = "My Vector Operations")
-	static float Dist(FLessonOct21Struct A, FLessonOct21Struct B);
+public:
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "October 21 Lesson")
+		static FLessonOct21Struct AddStructs(FLessonOct21Struct A, FLessonOct21Struct B);
 };

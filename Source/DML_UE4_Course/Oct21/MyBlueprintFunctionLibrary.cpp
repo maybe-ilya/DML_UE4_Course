@@ -3,12 +3,7 @@
 #include "DML_UE4_Course.h"
 #include "MyBlueprintFunctionLibrary.h"
 
-UMyBlueprintFunctionLibrary::UMyBlueprintFunctionLibrary(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+FLessonOct21Struct UMyBlueprintFunctionLibrary::AddStructs(FLessonOct21Struct A, FLessonOct21Struct B)
 {
-
-}
-
-float UMyBlueprintFunctionLibrary::Dist(FLessonOct21Struct A, FLessonOct21Struct B)
-{
-	return 1.0f;
+	return FLessonOct21Struct::Add(A, B);
 }

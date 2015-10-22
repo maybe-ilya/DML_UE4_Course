@@ -10,14 +10,15 @@ AMyCharacter::AMyCharacter(const FObjectInitializer& ObjectInitializer) : Super(
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	GetCapsuleComponent()->InitCapsuleSize(28.f, 92.f);
+	// Компоненты класса ACharacter запривачены, поэтому напрямую к ним обратиться нельзя, а только через геттер
+	GetCapsuleComponent()->InitCapsuleSize(28.f, 92.f);	// Меняем размеры Капсулы персонажа. Первый параметр - радиус, второй - половина высоты Капсулы.
 
-	bUseControllerRotationYaw = false;
+	bUseControllerRotationYaw = false; // Персонаж не будет использовать Поворот своего Контроллера
 
-	GetCharacterMovement()->bOrientRotationToMovement = true;
+	GetCharacterMovement()->bOrientRotationToMovement = true; // Поворачивает Персонажа по направлению ускорения, что позволяет без вращения камеры двигаться во все стороны
 
-	GetMesh()->AddRelativeLocation(FVector(0, 0, -92.f));
-	GetMesh()->AddRelativeRotation(FRotator(0, -90.f, 0));
+	GetMesh()->AddRelativeLocation(FVector(0, 0, -92.f));		// Опускаем компонент Меш(3D модели) на 92 юнита вниз. 1 юнит = 1 реальный сантиметр
+	GetMesh()->AddRelativeRotation(FRotator(0, -90.f, 0));		// И его же поворачиваем на 90 градусов влево
 
 	DefaultHealth = 100;
 	Health = DefaultHealth;

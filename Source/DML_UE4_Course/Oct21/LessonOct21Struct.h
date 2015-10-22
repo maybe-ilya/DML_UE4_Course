@@ -10,6 +10,10 @@ struct FLessonOct21Struct
 {
 	GENERATED_USTRUCT_BODY()
 public:
+	//  онструкторы
+	FLessonOct21Struct();
+	FLessonOct21Struct(float x, float y, float z);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Test Struct")
 		float MyX;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Test Struct")
@@ -17,5 +21,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Test Struct")
 		float MyZ;
 
-	//static FLessonOct21Struct Add(FLessonOct21Struct A, FLessonOct21Struct B);
+	/* ћетоды, объ€вленные в структуре, не могут €вл€тьс€ UFUNCTION, 
+	поэтому дл€ статичных методов в Blueprint'ах 
+	создают дочерний от UBluepruntFunctionLibrary класс,
+	в котором эти статичные методы объ€вл€ют так UFUNCTION */
+	static FLessonOct21Struct Add(FLessonOct21Struct A, FLessonOct21Struct B);
 };
