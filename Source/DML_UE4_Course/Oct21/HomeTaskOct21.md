@@ -18,19 +18,23 @@
 * После отжатия кнопки действия метод OnActionButtonReleased() меняет переменную перечисления на значение Idle, если вы стоите, или Moving, если вы двигаетесь 
 * В методе Tick(float DeltaSeconds) необходимо увеличивать соответствующий состоянию компонент структуры.
 	* С перечислениями можно работать при помощи switch
+	``` c++
 	> Switch(Test)
 	{
 		case ETestEnum::Idle :
-		{- Paste code here -}
-		break;
+		...
+			break;
 		case ETestEnum::Moving :
-		{- Paste code here -}
-		break;
-		{- Paste code here -}
+		...
+			break;
+		...
 	}
+	```
 	* Компоненты структур по умолчанию публичны и с ними можно оперировать как с обычными переменными
-	> TestStruct.X += 1;
+	``` c++
+	TestStruct.X += 1;
 	TestStruct.Y += TestStruct.X;
+	```
 	
 ###### Подсказка: получить скорость передвижения можно из вектора ускорения Актера
 
