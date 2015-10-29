@@ -62,29 +62,28 @@ void ARayCastCharacter::ThrowRay()
 	ObjectParams,
 	TraceParams);*/
 
-
-
-
 	/*GetWorld()->SweepSingleByChannel(	// Рейкаст при помощи физических примитивов
-	TraceHit,
-	GetActorLocation(),
-	TraceEnd,
-	FQuat::Identity,	// для Свипа необходим Rotation, выраженный через FQuat. FQuat::Identity сам определяет поворот на основе двух данный точек. Но вы также можете указать его вручную
-	COLLISION_TEST_TRACE,
-	FCollisionShape::MakeBox(FVector(0, 100, 100)),	// Делает форму, по которой будет делать свип
-	TraceParams);*/
+		TraceHit,
+		GetActorLocation(),
+		TraceEnd,
+		FQuat::Identity,	// для Свипа необходим Rotation, выраженный через FQuat. FQuat::Identity сам определяет поворот на основе двух данный точек. Но вы также можете указать его вручную
+		COLLISION_TEST_TRACE,
+		FCollisionShape::MakeBox(FVector(0, 100, 100)),	// Делает форму, по которой будет делать свип. В этой строке это - коробка
+		FCollisionShape::MakeSphere(25.0f),	// Здесь - сфера
+		FCollisionShape::MakeCapsule(50.f, 100.f),	// А тут - капсула. Для Вызова рейкаста раскоменть только одну из этих трех строчек
+		TraceParams);*/
 
 
 
 
-	/*TArray<FHitResult> TraceHits;	// Ниже приведен рейкаст для множественных объектов. Разница в том, что вместо одного FHitResult, необходимо подавать массив из них
+	//TArray<FHitResult> TraceHits;	// Ниже приведен рейкаст для множественных объектов. Разница в том, что вместо одного FHitResult, необходимо подавать массив из них
 
-	GetWorld()->LineTraceMultiByChannel(
-	TraceHits,
-	GetActorLocation(),
-	TraceEnd,
-	COLLISION_TEST_TRACE,
-	TraceParams);*/
+	//GetWorld()->LineTraceMultiByChannel(
+	//	TraceHits,
+	//	GetActorLocation(),
+	//	TraceEnd,
+	//	COLLISION_TEST_TRACE,
+	//	TraceParams);
 
 
 
@@ -103,16 +102,28 @@ void ARayCastCharacter::ThrowRay()
 	if (TraceHit.GetActor())	// Проверка, ударили ли мы какого-либо актера
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Yellow, "YAY!!!");
-		ARayCastCharacter* Ray = Cast<ARayCastCharacter>(TraceHit.GetActor());
+
+		/*ARayCastCharacter* Ray = Cast<ARayCastCharacter>(TraceHit.GetActor());
 
 		if (Ray)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, "It's Ray!!!");
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Cyan, "It's Ray!!!");
+		}*/
+
+		if (TraceHit.GetActor()->GetClass()->ImplementsInterface(ULessonOct28Interface::StaticClass())) 
+		// Проверка на то, реализует ли класс данного объекта указанный интерфейс. 
+		// Необходимо ее делать обязательно, без нее компиляция пройдет, а вот приложение крашнется.
+		{
+			ILessonOct28Interface::Execute_Test(TraceHit.GetActor());	//Послание сообщения на выполнение функции
+			// Если у метода вашего есть параметры, в Execute_MethodName нужно их подавать сразу после указания актера для исполнения
+			// Например: ITestInterface::Execute_TestMethod(TestActor, Param1, Param2); Количество параметров значения не имеет.
 		}
+
+
 	}
 	else
 	{
-		//GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "No hit...");
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Red, "No hit...");
 	}
 
 
@@ -125,10 +136,15 @@ void ARayCastCharacter::OnHit(AActor* SelfActor, AActor* OtherActor, FVector Nor
 
 void ARayCastCharacter::OnBeginOverlap(AActor* OtherActor)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, "Actor Begin Overlap");
+	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Actor Begin Overlap");
 }
 
 void ARayCastCharacter::OnEndOverlap(AActor* OtherActor)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Yellow, "Actor End Overlap");
+	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Yellow, "Actor End Overlap");
+}
+
+void ARayCastCharacter::Test_Implementation()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, "Interface Method Call");
 }

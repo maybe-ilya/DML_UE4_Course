@@ -3,13 +3,14 @@
 #pragma once
 
 #include "Oct14/PlayableCharacter.h"
+#include "Lesson/Oct28/LessonOct28Interface.h"
 #include "RayCastCharacter.generated.h"
 
 /**
  *
  */
 UCLASS()
-class DML_UE4_COURSE_API ARayCastCharacter : public APlayableCharacter
+class DML_UE4_COURSE_API ARayCastCharacter : public APlayableCharacter, public ILessonOct28Interface
 {
 	GENERATED_BODY()
 
@@ -36,4 +37,6 @@ public:
 
 	UFUNCTION()
 		void OnEndOverlap(AActor* OtherActor);
+
+	virtual void Test_Implementation() override;
 };
