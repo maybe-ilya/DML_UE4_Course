@@ -31,6 +31,9 @@ If you're [Digital Media Lab](http://vk.com/digitalmedialab) 2nd year student, p
 
 But if you're 1st or 3rd year student or you just want to learn UE4 basics I'm going to stream lessons to [My Twitch channel](http://www.twitch.tv/napolinkinpark3r). Everybody is welcome. Records will be stored in the same Twitch channel.
 
+# Also I've created YouTube playlist for storing lesson videos
+[Watch them if you missed some lessons](http://www.youtube.com/playlist?list=PL3mxUUNTWyCle0NvrJrKvPqPbpMMfptUL)
+
 If you have questions about UE4 or this lessons course, please text down your question to my email
 > **napolinkinpark3r@gmail.com** 
 
