@@ -5,6 +5,7 @@
 /DerivedDataCache
 /Content/Developers
 /Content/Collections
+/.vs
 
 # Asset packs you need to add to your repo clone
 /Content/StarterContent
