@@ -37,4 +37,9 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "October_14_Lesson")
 	int32 GetHealth() const;
 
+protected:
+	UFUNCTION(BlueprintCallable, Category = "November_18_Lesson")
+		void BeginPunching();
+	UFUNCTION(BlueprintCallable, Category = "November_18_Lesson")
+		void EndPunching();
 };

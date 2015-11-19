@@ -2,6 +2,7 @@
 
 #include "DML_UE4_Course.h"
 #include "MyCharacter.h"
+#include "Lesson/Nov18/BaseCharacterAnimation.h"
 
 
 // Sets default values
@@ -45,6 +46,9 @@ void AMyCharacter::SetupPlayerInputComponent(class UInputComponent* InputCompone
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
+	InputComponent->BindAction("Punch", IE_Pressed, this, &AMyCharacter::BeginPunching);
+	InputComponent->BindAction("Punch", IE_Released, this, &AMyCharacter::EndPunching);
+
 }
 
 void AMyCharacter::SetHealth(int32 NewHealth)
@@ -55,4 +59,24 @@ void AMyCharacter::SetHealth(int32 NewHealth)
 int32 AMyCharacter::GetHealth() const
 {
 	return Health;
+}
+
+void AMyCharacter::BeginPunching()
+{
+	UBaseCharacterAnimation* CharAnim = Cast<UBaseCharacterAnimation>(GetMesh()->GetAnimInstance());
+
+	if (CharAnim)
+	{
+		CharAnim->BeginPunch();
+	}
+}
+
+void AMyCharacter::EndPunching()
+{
+	UBaseCharacterAnimation* CharAnim = Cast<UBaseCharacterAnimation>(GetMesh()->GetAnimInstance());
+
+	if (CharAnim)
+	{
+		CharAnim->EndPunch();
+	}
 }
