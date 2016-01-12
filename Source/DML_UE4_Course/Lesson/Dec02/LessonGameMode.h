@@ -3,7 +3,7 @@
 #pragma once
 
 #include "GameFramework/GameMode.h"
-#include "Dec2/CubeSpawner.h"
+#include "Lesson/Dec02/CubeSpawner.h"
 #include "LessonGameMode.generated.h"
 
 /**

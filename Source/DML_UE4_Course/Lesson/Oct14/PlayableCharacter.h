@@ -2,10 +2,9 @@
 
 #pragma once
 
-#include "Oct14/MyCharacter.h"
-
-#include "Oct21/LessonOct21Enum.h"
-#include "Oct21/LessonOct21Struct.h"
+#include "Lesson/Oct14/MyCharacter.h"
+#include "Lesson/Oct21/LessonOct21Enum.h"
+#include "Lesson/Oct21/LessonOct21Struct.h"
 
 #include "PlayableCharacter.generated.h"
 

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "Oct21/LessonOct21Struct.h"
+#include "Lesson/Oct21/LessonOct21Struct.h"
 #include "MyBlueprintFunctionLibrary.generated.h"
 
 /**

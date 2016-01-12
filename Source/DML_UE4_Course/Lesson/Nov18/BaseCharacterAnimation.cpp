@@ -2,7 +2,7 @@
 
 #include "DML_UE4_Course.h"
 #include "BaseCharacterAnimation.h"
-#include "Oct14/MyCharacter.h"
+#include "Lesson/Oct14/MyCharacter.h"
 
 UBaseCharacterAnimation::UBaseCharacterAnimation(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Oct14/PlayableCharacter.h"
+#include "Lesson/Oct14/PlayableCharacter.h"
 #include "Lesson/Oct28/LessonOct28Interface.h"
 #include "RayCastCharacter.generated.h"
 

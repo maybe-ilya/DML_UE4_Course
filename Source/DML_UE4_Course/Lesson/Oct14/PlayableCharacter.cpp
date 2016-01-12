@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "DML_UE4_Course.h"
-#include "PlayableCharacter.h"
+#include "Lesson/Oct14/PlayableCharacter.h"
 
 APlayableCharacter::APlayableCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {

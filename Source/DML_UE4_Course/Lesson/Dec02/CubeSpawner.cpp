@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "DML_UE4_Course.h"
-#include "CubeSpawner.h"
+#include "Lesson/Dec02/CubeSpawner.h"
 #include "Kismet/KismetMathLibrary.h"
 
 
