@@ -14,7 +14,7 @@ void USoundClassManipulator::ChangeVolumeForClass(FString DesiredSoundClass, flo
 		return;
 	}
 
-	USoundClass* SoundClass = NULL;
+	/*USoundClass* SoundClass = NULL;*/
 
 	for (TMap<USoundClass*, FSoundClassProperties>::TIterator It(Device->SoundClasses); It; ++It)
 	{
