@@ -59,3 +59,7 @@ EBTNodeResult::Type UMyBTTask::ExecuteTask(UBehaviorTreeComponent& OwnerComp, ui
 		return EBTNodeResult::Succeeded;
 	}
 }
+
+
+
+

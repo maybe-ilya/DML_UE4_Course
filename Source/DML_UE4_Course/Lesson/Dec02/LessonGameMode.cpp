@@ -34,7 +34,7 @@ void ALessonGameMode::BeginPlay()
 
 void ALessonGameMode::Tick(float DeltaTime)
 {
-	UE_LOG(LogTemp, Warning, TEXT("My Score is %d"), GameScore);
+	//UE_LOG(LogTemp, Warning, TEXT("My Score is %d"), GameScore);
 }
 
 void ALessonGameMode::IncreaseScore()

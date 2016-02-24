@@ -30,4 +30,6 @@ public:
 	virtual FString GetStaticDescription() const override;
 
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory);
+
+	
 };
