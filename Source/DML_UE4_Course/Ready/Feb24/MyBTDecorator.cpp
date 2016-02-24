@@ -37,7 +37,7 @@ void UMyBTDecorator::OnBecomeRelevant(UBehaviorTreeComponent& OwnerComp, uint8 *
 		FColor::Cyan,
 		"Start Task");
 
-	UE_LOG(LogTemp, Warning, TEXT("Start"));
+	UE_LOG(LogTemp, Warning, TEXT("Start Decorator"));
 #endif
 }
 
@@ -50,6 +50,6 @@ void UMyBTDecorator::OnCeaseRelevant(UBehaviorTreeComponent& OwnerComp, uint8 * 
 		FColor::Cyan,
 		"Stop Task");
 
-	UE_LOG(LogTemp, Error, TEXT("Stop"));
+	UE_LOG(LogTemp, Error, TEXT("Stop Decorator"));
 #endif
 }

@@ -32,7 +32,7 @@ void UMyBTService::OnBecomeRelevant(UBehaviorTreeComponent& OwnerComp, uint8 * N
 		FColor::Cyan,
 		"Start Task");
 
-	UE_LOG(LogTemp, Warning, TEXT("Start"));
+	UE_LOG(LogTemp, Warning, TEXT("Start Service"));
 }
 
 void UMyBTService::OnCeaseRelevant(UBehaviorTreeComponent& OwnerComp, uint8 * NodeMemory)
@@ -43,5 +43,5 @@ void UMyBTService::OnCeaseRelevant(UBehaviorTreeComponent& OwnerComp, uint8 * No
 		FColor::Cyan,
 		"Stop Task");
 
-	UE_LOG(LogTemp, Error, TEXT("Stop"));
+	UE_LOG(LogTemp, Error, TEXT("Stop Service"));
 }

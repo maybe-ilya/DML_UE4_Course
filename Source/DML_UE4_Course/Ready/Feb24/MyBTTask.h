@@ -16,7 +16,7 @@ class DML_UE4_COURSE_API UMyBTTask : public UBTTaskNode
 public:
 	UMyBTTask(const FObjectInitializer& ObjectInitializer);
 
-	UPROPERTY(EditAnywhere, Category = "Test Task")
+	UPROPERTY(EditAnywhere, Category = "Test Task", meta = (DisplayName = "This is Lesson Key"))
 	struct FBlackboardKeySelector ActorKey;
 
 	UPROPERTY(EditAnywhere, Category = "Try to rewrite Description")

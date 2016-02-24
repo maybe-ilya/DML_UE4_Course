@@ -9,12 +9,13 @@ UMyBTTask::UMyBTTask(const FObjectInitializer& ObjectInitializer) : Super(Object
 {
 	NodeName = "Try to Execute this Task!";
 
-	ActorKey.AddObjectFilter(this, GET_MEMBER_NAME_CHECKED(UMyBTTask, ActorKey), AActor::StaticClass());
+	//ActorKey.AddObjectFilter(this, GET_MEMBER_NAME_CHECKED(UMyBTTask, ActorKey), AActor::StaticClass());
+	ActorKey.AddObjectFilter(this, GET_MEMBER_NAME_CHECKED(UMyBTTask, ActorKey), ATargetPoint::StaticClass());
 }
 
 FString UMyBTTask::GetStaticDescription() const
 {
-	return MyDescription.IsEmpty() ? "Try to rewrite Description" : MyDescription;
+	return MyDescription.IsEmpty() ? "Try to rewrite Description" : ActorKey.SelectedKeyName.ToString();
 }
 
 EBTNodeResult::Type UMyBTTask::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
