@@ -36,6 +36,26 @@ EBTNodeResult::Type UMyBTTask::ExecuteTask(UBehaviorTreeComponent& OwnerComp, ui
 
 		CurrentBlackboard->SetValue<UBlackboardKeyType_Object>(ActorKey.SelectedKeyName, TestValue);
 
+		if (ExplosionEmitter)
+		{
+			UGameplayStatics::SpawnEmitterAtLocation(
+				GetWorld(),
+				ExplosionEmitter,
+				OwnerComp.GetOwner()->GetActorLocation(),
+				FRotator::ZeroRotator,
+				true);
+		}
+		if (ExplosionSound)
+		{
+			UGameplayStatics::PlaySoundAtLocation(
+				GetWorld(),
+				ExplosionSound,
+				OwnerComp.GetOwner()->GetActorLocation(),
+				1.0f,
+				1.0f,
+				0.0f);
+		}
+
 		return EBTNodeResult::Succeeded;
 	}
 }

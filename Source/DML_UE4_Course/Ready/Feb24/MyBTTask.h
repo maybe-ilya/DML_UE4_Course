@@ -22,6 +22,11 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Try to rewrite Description")
 		FString MyDescription;
 
+	UPROPERTY(EditAnywhere, Category = "Explosion")
+		UParticleSystem* ExplosionEmitter;
+	UPROPERTY(EditAnywhere, Category = "Explosion")
+		USoundBase* ExplosionSound;
+
 	virtual FString GetStaticDescription() const override;
 
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory);
