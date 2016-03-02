@@ -8,7 +8,12 @@
 #include "BehaviorTree/BehaviorTreeComponent.h"
 #include "BehaviorTree/BlackboardComponent.h"
 // Includes for Perception
+#include "Perception/AIPerceptionSystem.h"
 #include "Perception/AIPerceptionComponent.h"
+#include "Perception/AISense.h"
+#include "Perception/AISense_Hearing.h"
+#include "Perception/AISense_Sight.h"
+#include "Perception/AISenseConfig.h"
 #include "Perception/AISenseConfig_Hearing.h"
 #include "Perception/AISenseConfig_Sight.h"
 
@@ -36,11 +41,13 @@ protected:
 		UBehaviorTreeComponent* BehaviorTreeComp;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI Components")
 		UBlackboardComponent* BlackboardComp;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI Components")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "AI Components")
 		UAIPerceptionComponent* PerceptionComp;
 	// Perception senses
-	UAISenseConfig_Hearing* HearingSense;
-	UAISenseConfig_Sight* SightSense;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Sense")
+		UAISenseConfig_Hearing* HearingSense;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Sense")
+		UAISenseConfig_Sight* SightSense;
 
 public:
 	UFUNCTION(Category = "Perception Testing")
