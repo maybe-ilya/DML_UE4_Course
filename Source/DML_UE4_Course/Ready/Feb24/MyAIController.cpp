@@ -10,7 +10,7 @@ AMyAIController::AMyAIController(const FObjectInitializer& ObjectInitializer) : 
 	BrainComponent = BehaviorTreeComp = ObjectInitializer.CreateDefaultSubobject<UBehaviorTreeComponent>(this, "Behavior Tree Component");
 	BrainComponent->bAutoActivate = false;
 
-	PerceptionComp = ObjectInitializer.CreateDefaultSubobject<UAIPerceptionComponent>(this, "Perception Component");
+	PerceptionComponent = PerceptionComp = ObjectInitializer.CreateDefaultSubobject<UAIPerceptionComponent>(this, "Perception Component");
 	SetPerceptionComponent(*PerceptionComp);
 	// Configuration of senses. I've tried to create them just like
 	// ordinary UObject (with NewObject and CreateObject), but failed.

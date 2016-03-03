@@ -41,12 +41,12 @@ protected:
 		UBehaviorTreeComponent* BehaviorTreeComp;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI Components")
 		UBlackboardComponent* BlackboardComp;
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "AI Components")
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "AI Components")
 		UAIPerceptionComponent* PerceptionComp;
 	// Perception senses
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Sense")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI Sense")
 		UAISenseConfig_Hearing* HearingSense;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI Sense")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI Sense")
 		UAISenseConfig_Sight* SightSense;
 
 public:
