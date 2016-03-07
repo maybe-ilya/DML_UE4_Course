@@ -20,3 +20,14 @@
 *-DebugGame.dll
 *.log
 *.target.xml
+
+# Ignoring some engine generated files on Linux
+/.kdev4
+*.kdev4
+*.pro
+*.pri
+*.workspace
+CMakeLists.txt
+DML_UE4_CourseCodeCompletionFolders.txt
+DML_UE4_CourseCodeLitePreProcessor.txt
+Makefile
