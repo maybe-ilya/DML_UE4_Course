@@ -9,12 +9,10 @@ ARayCastCharacter::ARayCastCharacter(const FObjectInitializer& ObjectInitializer
 
 	GetCapsuleComponent()->SetNotifyRigidBodyCollision(true);
 
-	this->OnActorHit.AddDynamic(this, &ARayCastCharacter::OnHit);
-	this->OnActorBeginOverlap.AddDynamic(this, &ARayCastCharacter::OnBeginOverlap);
-	this->OnActorEndOverlap.AddDynamic(this, &ARayCastCharacter::OnEndOverlap);
+// 	this->OnActorHit.AddDynamic(this, &ARayCastCharacter::OnHit);
+// 	this->OnActorBeginOverlap.AddDynamic(this, &ARayCastCharacter::OnBeginOverlap);
+// 	this->OnActorEndOverlap.AddDynamic(this, &ARayCastCharacter::OnEndOverlap);
 
-
-	/*this->OnActorHit.AddDynamic(this, &ARayCastCharacter::OnHit)*/
 }
 
 void ARayCastCharacter::SetupPlayerInputComponent(class UInputComponent* InputComponent)
@@ -131,17 +129,17 @@ void ARayCastCharacter::ThrowRay()
 
 void ARayCastCharacter::OnHit(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Magenta, "Actor Hit");
+// 	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Magenta, "Actor Hit");
 }
 
 void ARayCastCharacter::OnBeginOverlap(AActor* OtherActor)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Actor Begin Overlap");
+// 	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Actor Begin Overlap");
 }
 
 void ARayCastCharacter::OnEndOverlap(AActor* OtherActor)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Yellow, "Actor End Overlap");
+// 	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Yellow, "Actor End Overlap");
 }
 
 void ARayCastCharacter::Test_Implementation()

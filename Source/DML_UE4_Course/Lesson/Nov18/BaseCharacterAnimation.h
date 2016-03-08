@@ -28,9 +28,12 @@ public:
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 
-	UFUNCTION(BlueprintCallable, Category = "Base Character Animation")
+	UFUNCTION(NetMulticast, Reliable, BlueprintCallable, Category = "Base Character Animation")
 	void BeginPunch();
-
-	UFUNCTION(BlueprintCallable, Category = "Base Character Animation")
+	void BeginPunch_Implementation();
+	
+	
+	UFUNCTION(NetMulticast, Reliable, BlueprintCallable, Category = "Base Character Animation")
 	void EndPunch();
+	void EndPunch_Implementation();
 };

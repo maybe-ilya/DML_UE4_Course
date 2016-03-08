@@ -25,7 +25,7 @@ void UBaseCharacterAnimation::NativeUpdateAnimation(float DeltaSeconds)
 	bIsFalling = Char->GetCharacterMovement()->IsFalling();
 }
 
-void UBaseCharacterAnimation::BeginPunch()
+void UBaseCharacterAnimation::BeginPunch_Implementation()
 {
 	if (PunchMontage != NULL && !Montage_IsPlaying(PunchMontage))
 	{
@@ -33,7 +33,7 @@ void UBaseCharacterAnimation::BeginPunch()
 	}
 }
 
-void UBaseCharacterAnimation::EndPunch()
+void UBaseCharacterAnimation::EndPunch_Implementation()
 {
 	if (PunchMontage != NULL && Montage_IsPlaying(PunchMontage))
 	{

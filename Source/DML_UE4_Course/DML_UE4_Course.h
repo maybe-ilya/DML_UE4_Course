@@ -3,6 +3,8 @@
 #pragma once
 
 #include "Engine.h"
+#include "Online.h"
+#include "Net/UnrealNetwork.h"
 
 #define COLLISION_TEST_TRACE	ECC_GameTraceChannel1
 #define COLLISION_TEST_OBJECT	ECC_GameTraceChannel2
