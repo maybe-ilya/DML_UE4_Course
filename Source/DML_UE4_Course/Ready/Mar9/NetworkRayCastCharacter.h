@@ -31,9 +31,9 @@ public:
 	bool UpdateJumpHeight_Validate(float step);
 
 
-	UFUNCTION(Client, Reliable)
+	UFUNCTION(/*Client, Reliable*/)
 	void OnRep_JumpHeight();
-	void OnRep_JumpHeight_Implementation();
+	/*void OnRep_JumpHeight_Implementation();*/
 	
 	// Example of Client function
 	UFUNCTION(Client, Unreliable, BlueprintCallable, Category = "Testing Network")
