@@ -55,11 +55,22 @@ void UOnlineGameInstance::HostOnlineGame_BP()
 bool UOnlineGameInstance::JoinOnlineGame(ULocalPlayer* LocalPlayer)
 {
 	AExampleGameSession* GameSession = GetExampleGameSession();
-	if (GameSession)
+	if (GameSession && (GameSession->SessionSearch.IsValid()))
 	{
-		return GameSession->JoinSessionGame(LocalPlayer->GetPreferredUniqueNetId(),
-			"This is Example Session game",
-			GameSession->SessionSearch->SearchResults[0]);
+		if (GameSession->SessionSearch->SearchResults.Num() > 0)
+		{
+			return GameSession->JoinSessionGame(LocalPlayer->GetPreferredUniqueNetId(),
+				"This is Example Session game",
+				GameSession->SessionSearch->SearchResults[0]);
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				10.f,
+				FColor::Red,
+				TEXT("There is no sessions"));
+		}
 	}
 	return false;
 }
@@ -74,10 +85,20 @@ void UOnlineGameInstance::JoinOnlineGame_BP()
 		if (Test)
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Join OK? : TRUE"));
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				10.f,
+				FColor::Magenta,
+				TEXT("Join OK? : TRUE"));
 		}
 		else
 		{
 			UE_LOG(LogTemp, Warning, TEXT("Join OK? : FALSE"));
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				10.f,
+				FColor::Magenta,
+				TEXT("Join OK? : FALSE"));
 		}
 	}
 }

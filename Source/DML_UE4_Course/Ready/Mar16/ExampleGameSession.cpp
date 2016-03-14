@@ -92,7 +92,7 @@ void AExampleGameSession::OnStartSessionComplete(FName SessionName, bool bIsSucc
 
 	if (bIsSuccessful)
 	{
-		UGameplayStatics::OpenLevel(GetWorld(), "fy_ziganshin_a68_BSP", true, "listen");
+		UGameplayStatics::OpenLevel(GetWorld(), "EmptyMap", true, "listen?bIsLanMatch=1");
 		GEngine->AddOnScreenDebugMessage(
 			-1,
 			10.f,
@@ -203,21 +203,30 @@ void AExampleGameSession::OnJoinSessionComplete(FName SessionName, EOnJoinSessio
 
 			/*if (Result == EOnJoinSessionCompleteResult::Success)
 			{*/
-				APlayerController* const PlayerController = this->GetWorld()->GetGameInstance()->GetFirstLocalPlayerController();
+			APlayerController* const PlayerController = this->GetWorld()->GetGameInstance()->GetFirstLocalPlayerController();
 
-				FString TravelURL;
+			FString TravelURL;
 
+			if (PlayerController && Sessions->GetResolvedConnectString(SessionName, TravelURL))
+			{
+				PlayerController->ClientTravel(TravelURL, ETravelType::TRAVEL_Absolute);
 				GEngine->AddOnScreenDebugMessage(
 					-1,
 					10.f,
 					FColor::Magenta,
-					TEXT("Client has joined session"));
-
-				if (PlayerController && Sessions->GetResolvedConnectString(SessionName, TravelURL))
-				{
-					PlayerController->ClientTravel(TravelURL, ETravelType::TRAVEL_Absolute);
-				}
-			//}
+					FString::Printf(
+						TEXT("Client %s has joined session via %S URL"),
+						*(PlayerController->GetName()),
+						*(TravelURL)));
+			}
+			else
+			{
+				GEngine->AddOnScreenDebugMessage(
+					-1,
+					10.f,
+					FColor::Red,
+					TEXT("Cleint can't travel via URL"));
+			}
 		}
 	}
 }
@@ -236,7 +245,7 @@ void AExampleGameSession::OnDestroySessionComplete(FName SessionName, bool bIsSu
 
 			if (bIsSuccessful)
 			{
-				UGameplayStatics::OpenLevel(GetWorld(), "Polygon", true);
+				UGameplayStatics::OpenLevel(GetWorld(), "EmptyMap", true);
 			}
 		}
 	}
