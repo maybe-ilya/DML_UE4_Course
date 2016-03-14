@@ -3,6 +3,7 @@
 #include "DML_UE4_Course.h"
 #include "Lesson/Dec02/LessonGameMode.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Ready/Mar16/ExampleGameSession.h"
 
 ALessonGameMode::ALessonGameMode()
 {
@@ -57,4 +58,7 @@ void ALessonGameMode::CallToSpawn()
 	}
 }
 
-
+TSubclassOf< class AGameSession > ALessonGameMode::GetGameSessionClass() const
+{
+	return AExampleGameSession::StaticClass();
+}

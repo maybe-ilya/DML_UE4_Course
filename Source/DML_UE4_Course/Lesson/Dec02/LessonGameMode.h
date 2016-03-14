@@ -42,4 +42,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Spawn")
 		void CallToSpawn();
+
+	virtual TSubclassOf< class AGameSession > GetGameSessionClass() const override;
+
 };
