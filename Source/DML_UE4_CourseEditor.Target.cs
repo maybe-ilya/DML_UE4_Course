@@ -8,7 +8,7 @@ public class DML_UE4_CourseEditorTarget : TargetRules
     public DML_UE4_CourseEditorTarget(TargetInfo Target)
     {
         Type = TargetType.Editor;
-        //bUsesSteam = true;
+        bUsesSteam = true;
     }
 
     //

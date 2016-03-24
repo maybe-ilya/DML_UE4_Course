@@ -8,8 +8,8 @@ public class DML_UE4_CourseTarget : TargetRules
 	public DML_UE4_CourseTarget(TargetInfo Target)
 	{
 		Type = TargetType.Game;
-        //bUsesSteam = true;
-	}
+        bUsesSteam = true;
+    }
 
 	//
 	// TargetRules interface.

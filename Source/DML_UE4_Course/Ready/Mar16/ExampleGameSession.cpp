@@ -92,7 +92,7 @@ void AExampleGameSession::OnStartSessionComplete(FName SessionName, bool bIsSucc
 
 	if (bIsSuccessful)
 	{
-		UGameplayStatics::OpenLevel(GetWorld(), "EmptyMap", true, "listen?bIsLanMatch=1");
+		UGameplayStatics::OpenLevel(GetWorld(), "EmptyMap", true, "listen");
 		GEngine->AddOnScreenDebugMessage(
 			-1,
 			10.f,

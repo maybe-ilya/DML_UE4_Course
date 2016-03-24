@@ -14,13 +14,13 @@ public class DML_UE4_Course : ModuleRules
         // PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 
         // 		Uncomment if you are using online features
-        PrivateDependencyModuleNames.Add("OnlineSubsystemNull");
-        // 		if ((Target.Platform == UnrealTargetPlatform.Win32) || (Target.Platform == UnrealTargetPlatform.Win64))
-        // 		{
-        // 				if (UEBuildConfiguration.bCompileSteamOSS == true)
-        // 				{
-        // 					DynamicallyLoadedModuleNames.Add("OnlineSubsystemSteam");
-        // 				}
-        // 		}
+        //PrivateDependencyModuleNames.Add("OnlineSubsystemNull");
+        if ((Target.Platform == UnrealTargetPlatform.Win32) || (Target.Platform == UnrealTargetPlatform.Win64))
+        {
+            if (UEBuildConfiguration.bCompileSteamOSS == true)
+            {
+                DynamicallyLoadedModuleNames.Add("OnlineSubsystemSteam");
+            }
+        }
     }
 }

@@ -29,7 +29,7 @@ bool UOnlineGameInstance::HostOnlineGame(ULocalPlayer* LocalPlayer)
 	if (GameSession)
 	{
 		/*return GameSession->HostSession()*/
-		return GameSession->HostSession(LocalPlayer->GetPreferredUniqueNetId(), "This is Example Session game", true, true, 4);
+		return GameSession->HostSession(LocalPlayer->GetPreferredUniqueNetId(), "This is Example Session game", false, true, 4);
 	}
 	return false;
 }
@@ -108,7 +108,7 @@ bool UOnlineGameInstance::SearchOnlineGame(ULocalPlayer* LocalPlayer)
 	AExampleGameSession* GameSession = GetExampleGameSession();
 	if (GameSession)
 	{
-		GameSession->FindSessions(LocalPlayer->GetPreferredUniqueNetId(), "This is Example Session game", true, true);
+		GameSession->FindSessions(LocalPlayer->GetPreferredUniqueNetId(), "This is Example Session game", false, true);
 	}
 	return true;
 }

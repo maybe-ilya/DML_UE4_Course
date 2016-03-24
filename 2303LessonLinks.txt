@@ -1,0 +1,3 @@
+Foot print system https://www.youtube.com/channel/UCIT8ZegtE8lxANwi4eTOGww
+
+Git Branches guide(SourceTree) http://www.bogotobogo.com/cplusplus/Git/Git_GitHub_Source_Tree_2_Branching_Merging.php
