@@ -32,3 +32,5 @@ CMakeLists.txt
 DML_UE4_CourseCodeCompletionFolders.txt
 DML_UE4_CourseCodeLitePreProcessor.txt
 Makefile
+
+*VC.db
