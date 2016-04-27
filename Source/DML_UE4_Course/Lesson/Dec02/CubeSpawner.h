@@ -3,7 +3,11 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+
 #include "CubeSpawner.generated.h"
+
+//class AMyCharacter;
+struct FLessonOct21Struct;
 
 UCLASS()
 class DML_UE4_COURSE_API ACubeSpawner : public AActor
@@ -25,10 +29,14 @@ protected:
 		UBoxComponent* BoxSpawner;
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn")
-		UClass* TargetActor;
+	/*UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn")
+		UClass* TargetActor;*/
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Spawn")
+		TSubclassOf<class AMyCharacter> TargetActor;
 
 	UFUNCTION(BlueprintCallable, Category = "Spawn")
 		void SpawnTargetActor();
-	
+
+	void MakeSomaMagic(class AMyCharacter Boo);
 };

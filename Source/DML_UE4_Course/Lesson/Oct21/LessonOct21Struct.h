@@ -26,4 +26,20 @@ public:
 	создают дочерний от UBluepruntFunctionLibrary класс,
 	в котором эти статичные методы объ€вл€ют так UFUNCTION */
 	static FLessonOct21Struct Add(FLessonOct21Struct A, FLessonOct21Struct B);
+
+	FORCEINLINE bool operator==(const FLessonOct21Struct& Other)
+	{
+		return this->MyX == Other.MyX;
+	};
+
+	FORCEINLINE FLessonOct21Struct operator+(const FLessonOct21Struct& Other)
+	{
+		FLessonOct21Struct Result;
+
+		Result.MyX = this->MyX + Other.MyX;
+		Result.MyY = this->MyY + Other.MyY;
+		Result.MyZ = this->MyZ + Other.MyZ;
+
+		return Result;
+	};
 };
