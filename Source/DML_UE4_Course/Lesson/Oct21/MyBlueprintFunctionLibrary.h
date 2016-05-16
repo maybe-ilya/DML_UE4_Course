@@ -17,5 +17,5 @@ class DML_UE4_COURSE_API UMyBlueprintFunctionLibrary : public UBlueprintFunction
 public:
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "October 21 Lesson")
-		static FLessonOct21Struct AddStructs(FLessonOct21Struct A, FLessonOct21Struct B);
+		static FLessonOct21Struct AddStructs(UPARAM(DisplayName = "First")FLessonOct21Struct A, UPARAM(DisplayName = "Second")FLessonOct21Struct B);
 };
